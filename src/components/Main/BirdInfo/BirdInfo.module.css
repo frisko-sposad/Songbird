@@ -1,0 +1,12 @@
+.BirdInfo {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  width: 100%;
+  height: 100%;
+  margin: 0 0 2.5rem 1rem;
+  background-color: #303030;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+}

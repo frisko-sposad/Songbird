@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
+  color: white;
+  width: 100%;    
+}
+
+.container_main {
+  display: flex;
+  height: 30rem;
+  
+}
+

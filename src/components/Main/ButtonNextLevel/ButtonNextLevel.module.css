@@ -1,0 +1,20 @@
+.ButtonNextLevel {
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  color: white;
+  width: 100%;
+  height: 4rem;
+  margin: 2.5rem 0 2.5rem 0;  
+  background-color: #303030;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #444444;
+  cursor: pointer;
+}
+
+.ButtonNextLevel:hover {
+  background-color: #444444;  
+}
+
+

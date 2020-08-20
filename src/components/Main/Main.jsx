@@ -4,15 +4,16 @@ import RandomBird from './RandomBird/RandomBird';
 import Answers from './Answers/Answers';
 import BirdInfo from './BirdInfo/BirdInfo';
 import ButtonNextLevel from './ButtonNextLevel/ButtonNextLevel';
+import state from './state';
 
-let currentRound = 2;
+
 
 const Header = () => {
   return (
-    <main className={style.main}>
+    <main className={style.main}>     
       <RandomBird />
       <div className={style.container_main}>
-        <Answers round={currentRound} />
+        <Answers round={state.round} />
         <BirdInfo />
       </div>
       <ButtonNextLevel />

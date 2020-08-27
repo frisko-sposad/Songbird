@@ -8,7 +8,7 @@
 
 .container_main {
   display: flex;
-  height: 30rem;
-  
+  justify-content: space-between;
+  flex-wrap: wrap;  
 }
 

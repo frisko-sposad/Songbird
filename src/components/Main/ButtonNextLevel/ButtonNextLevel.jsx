@@ -2,14 +2,27 @@ import React from 'react';
 import style from './ButtonNextLevel.module.css';
 import state from '../state';
 
-const ButtonNextLevel = () => {
+const ButtonNextLevel = (props) => {
+  let styleButton = style.ButtonNextLevel;
+  if (state.nextLevelButton === true) {
+    styleButton += ' ' + style.ButtonActive;
+  }
+
   return (
     <button
-      className={style.ButtonNextLevel}
+      className={styleButton}
       onClick={() => {
-        console.log('Работает');
-        if (state.round < 6) state.round++;
-        console.log("Номер раунда =" + state.round);
+        if (props.round < 5 && state.nextLevelButton === true) {
+          props.nextRound();
+          props.newCorrectAnswer();
+          state.nextLevelButton = false;
+          props.restorePoints();
+          props.closeBird();
+          state.win = false;
+        }
+        if (props.round >= 5 && state.nextLevelButton === true) {
+          props.GameOver();
+        }
       }}
     >
       Next Level

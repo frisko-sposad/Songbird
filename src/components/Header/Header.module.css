@@ -13,10 +13,12 @@
 }
 
 .logo {
-  height: 40px;
+  height: 33px;
   padding: 2rem;
 }
 
 .score {
   padding: 2rem;
+  display: flex;
+  align-items: flex-end;
 }

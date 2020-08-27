@@ -1,6 +1,5 @@
-.nav {
-  display: flex;
-  height: 40px;
+.nav {  
+  flex: auto;
   font-size: 1.5rem;
   border-radius: 0.5rem;
   background-color: yellowgreen;
@@ -10,26 +9,22 @@
   display: flex;
   justify-content: center;
   list-style-type: none;
+  flex-wrap: wrap;
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
 .nav li {
-  width: 200px;
-  height: 100%;
+  flex: auto;
+  width: 171px;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.nav li:hover {
+.activ {
   background-color: coral;
   border-radius: 0.5rem;
 }
 
-.nav a {
-  padding: 10px;
-  color: darkolivegreen;
-  text-decoration: none;
-  color: white;
-}

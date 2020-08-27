@@ -4,14 +4,14 @@ import Nav from './Nav';
 import Logo from './logo';
 import Score from './Score';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className={style.header}>
       <div className={style.container_header}>
         <Logo />
-        <Score />
+        <Score totalScores={props.totalScores}/>
       </div>
-      <Nav />
+      <Nav state={props.state} round={props.round} />
     </div>
   );
 };

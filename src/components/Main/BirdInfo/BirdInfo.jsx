@@ -1,43 +1,56 @@
 import React from 'react';
 import style from './BirdInfo.module.css';
 import AudioPlayer from 'react-h5-audio-player';
-import audio from '../RandomBird/Малыш.mp3';
 import BirdDate from '../birdsData';
+import state from "../state"
 
-const BirdInfo = () => {
-  return (
-    <div className={style.BirdInfo}>
-      <p className={style.instruction}>
-        Послушайте плеер. Выберите птицу из списка
-      </p>
-      <div className={style.birdInfoContainer}>
-        <img
-          className={style.RandomBirdImg}
-          src={BirdDate[0][0].image}
-          alt=""
-        />
-        <ul className={style.birdName}>
-          <li>
-            <h4>{BirdDate[0][0].name}</h4>
-          </li>
-          <li>
-            <span>{BirdDate[0][0].species}</span>
-          </li>
-          <li>
-            <AudioPlayer
-              className={style.AydioPlayer}
-              layout="horizontal-reverse"
-              customAdditionalControls={[]}
-              showJumpControls={false}
-              src={audio}
-              onPlay={(e) => console.log('onPlay')}
-            />
-          </li>
-        </ul>
+const BirdInfo = (props) => {
+  const bird = BirdDate[props.round][props.birdInfoItem];
+
+  if (state.birdInfoState === false) {
+    return (
+      <div className={style.BirdInfo}>
+        <p className={style.instruction}>
+          Послушайте плеер. Выберите птицу из списка
+        </p>
       </div>
-      <div className={style.birdDescription}>{BirdDate[0][0].description}</div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className={style.BirdInfo}>
+        <div className={style.birdInfoContainer}>
+          <img className={style.RandomBirdImg} src={bird.image} alt="" />
+          <ul className={style.birdName}>
+            <li>
+              <h4>{bird.name}</h4>
+            </li>
+            <li>
+              <span>{bird.species}</span>
+            </li>
+            <li>
+              <AudioPlayer
+                className={style.AydioPlayer}
+                autoPlayAfterSrcChange={false}
+                layout="horizontal-reverse"
+                customAdditionalControls={[]}
+                showJumpControls={false}
+                src={bird.audio}
+                onPlay={() => console.log('onPlay')}
+              />
+            </li>
+          </ul>
+        </div>
+        <div className={style.birdDescription}>{bird.description}</div>
+      </div>
+    );
+  }
+
+  // return (
+  //   <div className={style.BirdInfo}>
+  //     {info}
+
+  //   </div>
+  // );
 };
 
 export default BirdInfo;

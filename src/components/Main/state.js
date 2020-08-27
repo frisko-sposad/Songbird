@@ -1,8 +1,16 @@
 const state = {
-  round: 1,
-  score: 0,
-  correctAnswer: Math.floor(Math.random() * 6) + 1,
-  activeButton: false,
+  activBirdItem: '',    
+  birdInfoState: false,
+  nextLevelButton: false,
+  win: false,  
+  nameRound: [
+    'Разминка',
+    'Домашние',
+    'Перелетные',
+    'Лесные',
+    'Хищные',
+    'Морские',
+  ],
 };
 
 export default state;

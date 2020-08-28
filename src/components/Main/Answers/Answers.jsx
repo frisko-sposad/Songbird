@@ -58,6 +58,7 @@ const Answers = (props) => {
   console.log(`Правильный ответ: ${props.correctAnswer+1}`);
   const answerList = birdsData[props.round].map((el, index) => {
     return (
+      
       <li
         key={index}
         className={style.answerItem}
@@ -74,7 +75,7 @@ const Answers = (props) => {
 
   return (
     <div className={style.Answers}>
-      <ul className={style.AnswersUl}>{answerList}</ul>
+      <ul className={style.AnswersUl}>{answerList}</ul>      
     </div>
   );
 };

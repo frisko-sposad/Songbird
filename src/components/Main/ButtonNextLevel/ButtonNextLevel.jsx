@@ -19,9 +19,11 @@ const ButtonNextLevel = (props) => {
           props.restorePoints();
           props.closeBird();
           state.win = false;
+          state.birdInfoState = false;
         }
         if (props.round >= 5 && state.nextLevelButton === true) {
-          props.GameOver();
+          props.GameOver(); 
+          props.closeBird();         
         }
       }}
     >

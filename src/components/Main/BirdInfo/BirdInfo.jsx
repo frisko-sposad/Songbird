@@ -11,7 +11,7 @@ const BirdInfo = (props) => {
     return (
       <div className={style.BirdInfo}>
         <p className={style.instruction}>
-          Послушайте плеер. Выберите птицу из списка
+          Послушайте плеер. Выберите птицу из списка.
         </p>
       </div>
     );

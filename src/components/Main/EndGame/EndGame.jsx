@@ -6,8 +6,8 @@ const EndGame = (props) => {
     props.NewGame();
     props.NewGameRound();
     props.NewGameScore();
-  };
-
+    props.closeBird();
+  };  
   return (
     <div className={style.EndGame}>
       <h2 className={style.h2}>Конец игры</h2>

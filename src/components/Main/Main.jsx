@@ -15,6 +15,7 @@ const Main = (props) => {
           NewGameRound={props.NewGameRound}
           NewGameScore={props.NewGameScore}
           totalScores={props.totalScores}
+          closeBird={props.closeBird}
         />
       </main>
     );
@@ -28,7 +29,10 @@ const Main = (props) => {
           showBird={props.showBird}
         />
         <div className={style.container_main}>
-          <Answers
+          <Answers          
+            colorCorrectIco={props.colorCorrectIco}
+            colorInCorrectIco={props.colorInCorrectIco}
+            answerArr={props.answerArr}
             state={props.state}
             round={props.round}
             correctAnswer={props.correctAnswer}
@@ -44,6 +48,10 @@ const Main = (props) => {
           />
         </div>
         <ButtonNextLevel
+          NewGameRound={props.NewGameRound}
+          setcolorInCorrectIco={props.setcolorInCorrectIco}
+          answerArr={props.answerArr}
+          setAnswerArr={props.setAnswerArr}
           round={props.round}
           nextRound={props.nextRound}
           newCorrectAnswer={props.newCorrectAnswer}

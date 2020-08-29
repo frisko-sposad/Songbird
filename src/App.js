@@ -3,15 +3,27 @@ import './App.css';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import state from './components/Main/state';
+import BirdDate from '../src/components/Main/birdsData';
+import styleIco from './components/Main/Answers/Answers.module.css';
 
 function App(props) {
   const [round, setRound] = useState(0);
   function nextRound() {
-    setRound(round + 1);
+    setRound(round + 1);    
   }
   function NewGameRound() {
     setRound(0);
+    console.log(`должен быть 0, а у нас = ${round}`);
   }
+
+  const [colorCorrectIco, setcolorCorrectIco] = useState(
+    styleIco.correct_answer
+  );
+  const [colorInCorrectIco, setcolorInCorrectIco] = useState(
+    styleIco.incorrect_answer
+  );
+
+  const [answerArr, setAnswerArr] = useState(BirdDate[round].map((el) => el));
 
   const [point, setPoint] = useState(5);
   function decreasePoints() {
@@ -40,11 +52,12 @@ function App(props) {
   const [endGame, setEndGame] = useState(false);
   function GameOver() {
     setEndGame(true);
-    console.log(endGame);
+    NewGameRound();
   }
   function NewGame() {
     setEndGame(false);
-    console.log(endGame);
+    closeBird();
+    
   }
 
   const [birdInfoItem, setBirdInfoItem] = useState('');
@@ -68,6 +81,12 @@ function App(props) {
         totalScores={totalScores}
       />
       <Main
+        colorCorrectIco={colorCorrectIco}
+        setcolorCorrectIco={setcolorCorrectIco}
+        colorInCorrectIco={colorInCorrectIco}
+        setcolorInCorrectIco={setcolorInCorrectIco}
+        answerArr={answerArr}
+        setAnswerArr={setAnswerArr}
         totalScores={totalScores}
         state={state}
         round={round}

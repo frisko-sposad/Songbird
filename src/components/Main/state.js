@@ -1,4 +1,4 @@
-const state = {
+const state = {    
   activBirdItem: '',    
   birdInfoState: false,
   nextLevelButton: false,

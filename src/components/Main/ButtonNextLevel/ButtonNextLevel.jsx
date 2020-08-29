@@ -1,6 +1,8 @@
 import React from 'react';
 import style from './ButtonNextLevel.module.css';
 import state from '../state';
+import BirdDate from '../birdsData';
+import styleIco from '../Answers/Answers.module.css';
 
 const ButtonNextLevel = (props) => {
   let styleButton = style.ButtonNextLevel;
@@ -20,10 +22,23 @@ const ButtonNextLevel = (props) => {
           props.closeBird();
           state.win = false;
           state.birdInfoState = false;
+          props.setAnswerArr(BirdDate[props.round + 1].map((el) => el));
+          // снимаем красные и зелёные метки с ответов
+          for (let i = 0; i < 6; i++) {
+            document.getElementById(`ico${i}`).className =
+              styleIco.inactive_answer;
+          }          
         }
+
         if (props.round >= 5 && state.nextLevelButton === true) {
-          props.GameOver(); 
-          props.closeBird();         
+          props.closeBird();
+          props.GameOver();
+          props.NewGameRound();
+          props.newCorrectAnswer();          
+          props.restorePoints();
+          props.closeBird();
+          state.win = false;
+          state.birdInfoState = false;
         }
       }}
     >

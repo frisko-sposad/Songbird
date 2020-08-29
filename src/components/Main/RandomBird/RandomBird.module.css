@@ -31,7 +31,8 @@
 
 .RandomBirdName {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  font-size: 2rem;
   padding: 2rem;
   border-bottom: 1px solid #444444;
 }

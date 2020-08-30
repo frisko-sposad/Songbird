@@ -13,7 +13,7 @@ function App(props) {
   }
   function NewGameRound() {
     setRound(0);
-    console.log(`должен быть 0, а у нас = ${round}`);
+    console.log(`должен быть 0, а у нас = ${round}`);    
   }
 
   const [colorCorrectIco, setcolorCorrectIco] = useState(
@@ -57,7 +57,7 @@ function App(props) {
   function NewGame() {
     setEndGame(false);
     closeBird();
-    
+    setAnswerArr(BirdDate[0].map((el) => el));    
   }
 
   const [birdInfoItem, setBirdInfoItem] = useState('');

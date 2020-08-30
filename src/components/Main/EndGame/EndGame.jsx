@@ -3,8 +3,8 @@ import style from './EndGame.module.css';
 
 const EndGame = (props) => {
   const newGameClick = () => {
-    props.NewGame();
     props.NewGameRound();
+    props.NewGame();    
     props.NewGameScore();
     props.closeBird();
   };  

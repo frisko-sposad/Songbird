@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.container_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 33px;
+  padding: 2rem;
+}
+
+.score {
+  padding: 2rem;
+  display: flex;
+  align-items: flex-end;
+}

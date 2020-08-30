@@ -12,8 +12,7 @@ function App(props) {
     setRound(round + 1);    
   }
   function NewGameRound() {
-    setRound(0);
-    console.log(`должен быть 0, а у нас = ${round}`);    
+    setRound(0);    
   }
 
   const [colorCorrectIco, setcolorCorrectIco] = useState(

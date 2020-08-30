@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './EndGame.module.css';
+import state from '../state'
 
 const EndGame = (props) => {
   const newGameClick = () => {
@@ -7,6 +8,8 @@ const EndGame = (props) => {
     props.NewGame();    
     props.NewGameScore();
     props.closeBird();
+    state.nextLevelButton = false;
+    
   };  
   return (
     <div className={style.EndGame}>
